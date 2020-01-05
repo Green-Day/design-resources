@@ -1,0 +1,572 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Product Spec</title><style>
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	opacity: 0.5;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, KaiTi, STKaiTi, '华文楷体', KaiTi_GB2312, '楷体_GB2312', serif; }
+.mono { font-family: Nitti, 'Microsoft YaHei', '微软雅黑', monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, KaiTi, STKaiTi, '华文楷体', KaiTi_GB2312, '楷体_GB2312', serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, Nitti, 'Microsoft YaHei', '微软雅黑', monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="da11a24f-c3d6-4178-8cdc-bcd1f6462a33" class="page sans"><header><h1 class="page-title">Product Spec</h1><table class="properties"><tbody><tr class="property-row property-row-created_time"><th>Created</th><td><time>@Nov 21, 2019 8:47 PM</time></td></tr><tr class="property-row property-row-created_by"><th>Created By</th><td><span class="user"><img src="https://lh3.googleusercontent.com/-igeyKbyGpqs/AAAAAAAAAAI/AAAAAAAAAAo/EDd-fGJP1_M/photo.jpg" class="icon user-icon"/>Chet Corcos</span></td></tr><tr class="property-row property-row-last_edited_by"><th>Last Edited By</th><td><span class="user"><img src="https://lh3.googleusercontent.com/-igeyKbyGpqs/AAAAAAAAAAI/AAAAAAAAAAo/EDd-fGJP1_M/photo.jpg" class="icon user-icon"/>Chet Corcos</span></td></tr><tr class="property-row property-row-last_edited_time"><th>Last Edited Time</th><td><time>@Nov 21, 2019 8:47 PM</time></td></tr><tr class="property-row property-row-person"><th>Stakeholders</th><td><span class="user"><img src="Product%20Spec/cory-etzkorn-notion-cropped.jpg" class="icon user-icon"/>Cory Etzkorn</span></td></tr><tr class="property-row property-row-select"><th>Status</th><td></td></tr><tr class="property-row property-row-select"><th>Type</th><td></td></tr></tbody></table></header><div class="page-body"><nav id="9b471da6-d9ed-4e56-b966-63aff47b6a41" class="block-color-gray table_of_contents"><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#141249a4-0602-45ba-b450-5838b89dab95">Overview</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#837de138-c00b-40f9-84f0-56291262b314">Problem Statement </a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#e9d94fd3-2060-4b50-bba1-a2e4ce848fdb">Proposed Work</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#2f9a858d-3afc-40d8-9afc-5deef6dc371b">Success Criteria</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#edb9c089-05d1-4a44-b6de-9f69a4ad98d6">User Stories</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#0c823892-41b8-4f2d-9fe4-ebbce2ed32a1"><strong>User Type 1</strong></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#30d243e3-a264-406e-bc9f-76c88d02f37d"><strong>User Type 2</strong></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#97c992d5-5c0a-46cd-9943-a921525d8b4f">Scope </a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#58185013-0542-435e-b13d-137a7f6a85e1">Requirements</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#2301f3fd-c632-410b-bb7c-256e877330b7">Future Work</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#5098f62e-e276-4c51-bc35-ed14eff81bb5">Non-Requirements</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#3a5b09a5-a21a-45c8-ae66-233c7da693d4">Designs</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#bdd3fc4f-94d7-493a-b5a8-f726a308d1c2">Privacy Review</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#09adeaaa-d408-443c-afe7-6586c6a62331">Alternatives Considered </a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#76b9057d-a7e0-40fe-960b-5bf32fb9ab69">Related Documents</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#89bab598-2bf5-44d6-b9e0-039dad636899">Follow-up Tasks</a></div></nav><h1 id="141249a4-0602-45ba-b450-5838b89dab95" class="">Overview</h1><h2 id="837de138-c00b-40f9-84f0-56291262b314" class="">Problem Statement </h2><p id="87ee30d5-03ac-4f45-a64b-ca706b5353a2" class=""><mark class="highlight-gray">A brief description of the problem we&#x27;re trying to solve. Why is this valuable to work on? </mark></p><p id="f042d293-5e18-4192-9952-9c6aaf94b980" class="">
+</p><h2 id="e9d94fd3-2060-4b50-bba1-a2e4ce848fdb" class="">Proposed Work</h2><p id="00ea9d1f-36c9-4979-9151-fcc995822573" class=""><mark class="highlight-gray">A high-level overview of what we&#x27;re building and why it will solve the problem.</mark></p><p id="f0fa0643-2dca-4223-9d81-2bedb19d3da5" class="">
+</p><h1 id="2f9a858d-3afc-40d8-9afc-5deef6dc371b" class="">Success Criteria</h1><p id="77858d2f-69db-463d-a839-c2c9b8431ff1" class=""><mark class="highlight-gray">What criteria must be met in order to consider this project a success?</mark></p><ul id="2b8dbb8e-d9be-4b74-99e7-b1b17281d088" class="bulleted-list"><li>Once this project is complete, [User Type 1] will be able to do [Desired Behavior A], which we expect to lead to [Outcome Z]. </li></ul><h1 id="edb9c089-05d1-4a44-b6de-9f69a4ad98d6" class="">User Stories</h1><p id="1301e8af-2ad5-49c1-b70f-9b1d589b68d7" class=""><mark class="highlight-gray">How should the product behave from a user&#x27;s perspective?</mark></p><h2 id="0c823892-41b8-4f2d-9fe4-ebbce2ed32a1" class=""><strong>User Type 1</strong></h2><ul id="a54c58e6-8249-4b2a-b154-edf0d3257519" class="bulleted-list"><li></li></ul><h2 id="30d243e3-a264-406e-bc9f-76c88d02f37d" class=""><strong>User Type 2</strong></h2><ul id="aab0e441-b5f3-47db-8432-e453ba4f7716" class="bulleted-list"><li></li></ul><h1 id="97c992d5-5c0a-46cd-9943-a921525d8b4f" class="">Scope </h1><h2 id="58185013-0542-435e-b13d-137a7f6a85e1" class="">Requirements</h2><p id="cd5adb17-2aef-4a9c-af74-24cdb31d10fb" class="block-color-gray">What requirements should this project fulfill? </p><p id="49cb9db2-1c05-424b-a2a3-058b4ee28a4b" class="">
+</p><h2 id="2301f3fd-c632-410b-bb7c-256e877330b7" class="">Future Work</h2><p id="4f5dfbab-e723-455f-8c0c-ef04a08cc4ae" class="block-color-gray">List requirements that we know we want to add, but will do later.</p><p id="152ee826-f71d-44f8-8e12-29ff80dd690c" class="">
+</p><h2 id="5098f62e-e276-4c51-bc35-ed14eff81bb5" class="">Non-Requirements</h2><p id="a95c2c5c-ec1c-4c62-907f-c5590e4328d7" class="block-color-gray">Include anything related to this project that is out of scope. </p><p id="823189af-1e11-4bf7-9ef6-bb7f707931c8" class="">
+</p><h1 id="3a5b09a5-a21a-45c8-ae66-233c7da693d4" class="">Designs</h1><p id="ceab9bc1-520c-4d17-b833-2427b8e85ac1" class="block-color-gray">Include designs as necessary.</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="e865e5e4-1c87-4466-b6e2-65588f60ed12"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">Type <code>/figma</code> or <code>/invision</code>  to embed any publicly visible files. </div></figure><h1 id="bdd3fc4f-94d7-493a-b5a8-f726a308d1c2" class="">Privacy Review</h1><p id="daa48aa2-ab7e-49cb-98ff-ba0a00df94a5" class="block-color-gray">Include any relevant data privacy documentation or note why none is required. </p><p id="111c3712-e313-4003-aefb-037fb4cbab8e" class="">
+</p><h1 id="09adeaaa-d408-443c-afe7-6586c6a62331" class="">Alternatives Considered </h1><p id="58930f70-e290-475f-8389-226b013a56d5" class=""><mark class="highlight-gray">List any alternatives you considered to this solution and why you recommend this solution over the others.</mark></p><ul id="1bed5798-6229-4225-acb9-af6d6d8d5d69" class="bulleted-list"><li></li></ul><h1 id="76b9057d-a7e0-40fe-960b-5bf32fb9ab69" class="">Related Documents</h1><p id="bfac06d0-d5a6-482f-bec1-1bd3fa764336" class="block-color-gray">Include any links to relevant external documents.</p><p id="e88f80fd-1222-42dc-8e98-e44c5ac4a93e" class="">
+</p><h1 id="89bab598-2bf5-44d6-b9e0-039dad636899" class="">Follow-up Tasks</h1><p id="202eaa9b-d12f-4025-93a3-9177fb7164f5" class="block-color-gray">What needs to be done next?</p><ul id="2ed296d5-c059-40c2-9cc1-90e890522129" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked"></span></li></ul></div></article></body></html>
