@@ -2,11 +2,8 @@
   max-width: 960px;
 }
 
-/*
- * Custom translucent site header
- */
 .navbar-nav {
-    list-style: none;
+    list-style: none!important;
 }
 .jumbotron{
   background-image: url(banner.png);
