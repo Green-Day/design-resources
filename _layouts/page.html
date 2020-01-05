@@ -1,0 +1,38 @@
+---
+layout: default
+---
+<nav class="navbar navbar-expand-lg navbar-light bg-white">
+  <a class="navbar-brand" href="{{site.url}}"><img src="{{site.url}}/assets/dev_logo.png" style="height: 30px;" class="d-inline-block align-top"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#topNavbar" aria-controls="topNavbar" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="topNavbar">
+    <ul class="navbar-nav mr-auto">
+	    <li class="nav-item active">
+	        <a class="nav-link" href="{{ site.url }}/">главная</a>
+	    </li>
+	    <li class="nav-item active">
+		    <a class="nav-link" href="{{ site.url }}/brand">бренд</a>
+		</li>
+		<li class="nav-item active">
+		    <a class="nav-link" href="{{ site.url }}/components">компоненты</a>
+		</li>
+		<li class="nav-item active">
+		    <a class="nav-link disabled">ресурсы</a>
+		</li>
+		<li class="nav-item active">
+		    <a class="nav-link" href="{{ site.url }}/repos">репозитории</a>
+		</li>
+		<li class="nav-item active">
+		    <a class="nav-link" href="{{ site.url }}/contacts">контакты</a>
+	    </li>
+  </div>
+</nav>
+<div class="jumbotron bg-white jumbotron-fluid">
+  <div class="container-fluid">
+    <h1 class="display-4"><b>{{ page.title}}</b></h1>
+  </div>
+</div>
+
+{{content}}
