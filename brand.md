@@ -61,7 +61,7 @@ permalink: /brand/
 			</div>
 			<h3 class="h1" id="colors">цвета</h3>
 			<div class="row">
-				<div class="col-md-2">
+				<div class="col-md-2 mb-2">
 					<div class="card">
 						<div class="card-header" style="height: 200px; background-color: #45B549"></div>
 						<div class="card-body">
@@ -70,7 +70,7 @@ permalink: /brand/
 						</div>
 					</div>
 				</div>
-				<div class="col-md-2">
+				<div class="col-md-2 mb-2">
 					<div class="card">
 						<div class="card-header" style="height: 200px; background-color: #000"></div>
 						<div class="card-body">
@@ -79,7 +79,7 @@ permalink: /brand/
 						</div>
 					</div>
 				</div>
-				<div class="col-md-2">
+				<div class="col-md-2 mb-2">
 					<div class="card">
 						<div class="card-header" style="height: 200px; background-color: #fff"></div>
 						<div class="card-body">
@@ -88,7 +88,7 @@ permalink: /brand/
 						</div>
 					</div>
 				</div>
-				<div class="col-md-2">
+				<div class="col-md-2 mb-2">
 					<div class="card">
 						<div class="card-header" style="height: 200px; background-color: #4EE853"></div>
 						<div class="card-body">
@@ -97,7 +97,7 @@ permalink: /brand/
 						</div>
 					</div>
 				</div>
-				<div class="col-md-2">
+				<div class="col-md-2 mb-2">
 					<div class="card">
 						<div class="card-header" style="height: 200px; background-color: #0C8146"></div>
 						<div class="card-body">
@@ -106,7 +106,7 @@ permalink: /brand/
 						</div>
 					</div>
 				</div>
-				<div class="col-md-2">
+				<div class="col-md-2 mb-2">
 					<div class="card">
 						<div class="card-header" style="height: 200px; background: linear-gradient(135deg, #4ee853 0%, #0c8146 100%);"></div>
 						<div class="card-body">
@@ -115,7 +115,7 @@ permalink: /brand/
 						</div>
 					</div>
 				</div>
-				<div class="col-md-2">
+				<div class="col-md-2 mb-2">
 					<div class="card">
 						<div class="card-header" style="height: 200px; background-color: #707070"></div>
 						<div class="card-body">
@@ -124,7 +124,7 @@ permalink: /brand/
 						</div>
 					</div>
 				</div>
-				<div class="col-md-2">
+				<div class="col-md-2 mb-2">
 					<div class="card">
 						<div class="card-header" style="height: 200px; background-color: #E2BD27"></div>
 						<div class="card-body">
@@ -133,7 +133,7 @@ permalink: /brand/
 						</div>
 					</div>
 				</div>
-				<div class="col-md-2">
+				<div class="col-md-2 mb-2">
 					<div class="card">
 						<div class="card-header" style="height: 200px; background: #E22727;"></div>
 						<div class="card-body">
