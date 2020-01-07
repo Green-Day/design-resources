@@ -162,13 +162,16 @@ sup {
 
 a {
   color: #45B549;
+  transition: 0.3s;
+  background: rgba(39, 181, 73, 0);
   text-decoration: none;
-  background-color: transparent;
 }
 
 a:hover {
-  color: #1559cf;
-  text-decoration: underline;
+  color: #45B549;
+  transition: 0.3s;
+  background: rgba(39, 181, 73, 0.3);
+  text-decoration: none;
 }
 
 a:not([href]) {
