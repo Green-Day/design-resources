@@ -4530,7 +4530,7 @@ input[type="button"].btn-block {
 
 .nav-link:hover, .nav-link:focus {
   text-decoration: none;
-  backgound: rgba(0,0,0,0)!important;
+  background: rgba(0,0,0,0)!important;
   color: #45B549!important;
 }
 
