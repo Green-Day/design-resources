@@ -1,7 +1,7 @@
-<div class="card">
-  <div class='card-header'>
+<div class="card" style='background": #fff; border-radius: 10px;'>
+  <div class='card-header' style='background": #fff;'>
     <div class="d-flex flex-justify-between flex-items-start mb-1">
-      <h1 class="f4 lh-condensed mb-1">
+      <h1 class="h3 mb-1">
         <a href="{{ repository.html_url }}">
           {% octicon repo height:20 class:"mr-1 v-align-middle" fill:"#586069" aria-label:repo %}
           {{ repository.name }}
@@ -26,5 +26,5 @@
       </a>
     {% endif %}
   </div>
-  <a href='{{ repository.html_url }}' class='btn' style='background: #45B549; width: 100%; border-radius:0 0 20px 20px;'>подробнее</a>
+  <a href='{{ repository.html_url }}' class='btn' style='background: #45B549; width: 100%; border-radius:0 0 10px 10px;'>подробнее</a>
 </div>
