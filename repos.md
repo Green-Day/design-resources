@@ -4,7 +4,14 @@ title: репозитории
 permalink: /repos/
 
 ---
-<h3 class="container-fluid">страница в разработке</h3>
-<div class="my-6">
-    {% include projects.html %}
+<div class="d-sm-flex flex-wrap gutter-condensed mb-4">
+  {% assign sort_order = 'pushed_at' %}
+  {% assign filtered_repos = site.github.public_repositories | where:'fork', false | sort: sort_order | reverse %}
+  {% for repository in filtered_repos %}
+    {% unless site.projects.exclude.projects contains repository.name %}
+      <div class="col-sm-6 col-md-12 col-lg-6 col-xl-4 mb-3">
+        {% include repo-card.html %}
+      </div>
+    {% endunless %}
+  {% endfor %}
 </div>
