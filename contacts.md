@@ -4,9 +4,9 @@ title: контакты
 permalink: /contacts/
 
 ---
-<div class="container-fluid">
+<div class="container">
 	<div class="row">
-		<div class="col-md-2">
+		<div class="col-md-3">
 			<div class="card">
 				<div class="card-header p-0" style="height: 5px; background-color: #45B549"></div>
 				<div class="card-body">
@@ -16,7 +16,7 @@ permalink: /contacts/
 				</div>
 			</div>
 		</div>
-		<div class="col-md-2">
+		<div class="col-md-3">
 			<div class="card">
 				<div class="card-header p-0" style="height: 5px; background-color: #45B549"></div>
 				<div class="card-body">
@@ -26,7 +26,7 @@ permalink: /contacts/
 				</div>
 			</div>
 		</div>
-		<div class="col-md-2">
+		<div class="col-md-3">
 			<div class="card">
 				<div class="card-header p-0" style="height: 5px; background-color: #45B549"></div>
 				<div class="card-body">

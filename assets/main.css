@@ -17,21 +17,31 @@
   -webkit-backdrop-filter: saturate(180%) blur(20px);
   backdrop-filter: saturate(180%) blur(20px);
 }
-.site-header a {
+.site-header a{
   color: #999;
   transition: ease-in-out color .15s;
 }
-.site-header a:hover {
+.site-header a:hover{
   color: #fff;
   text-decoration: none;
 }
-#sidenav_scroll{
-  background: #fff;
-  color: #45b549;
+.navbar-brand, .navbar-brand:hover{
+  background: rgba(255,255,255,0)!important;
+}
+#sidenav_scroll .nav-link:visited{
+  background: #fff!important;
+  color: #45b549!important;
+  text-decoration: none;
+}
+#sidenav_scroll .nav-link{
+  background: #fff!important;
+  color: #45b549!important;
+  text-decoration: none;
 }
 #sidenav_scroll .nav-link.active{
-  border-left: 5px #45b549 solid;
-  font-weight: bold;
+  border-bottom: 5px #45b549 solid!important;
+  font-weight: bold!important;
+  text-decoration: none;
 }
 /*
  * Dummy devices (replace them with your own or something else entirely!)
